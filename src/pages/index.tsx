@@ -1,10 +1,7 @@
 import Head from "next/head";
-
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Footer from "./Components/Footer";
-
-import { Container } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -18,18 +15,9 @@ export default function Home() {
 
       <Header />
 
-      <Container
-        maxW="container.xl"
-        h="calc(100vh - 7rem)"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Hero />
-      </Container>
+      <Hero />
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

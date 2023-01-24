@@ -6,7 +6,7 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   font-size: 12px;

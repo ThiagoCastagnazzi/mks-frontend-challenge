@@ -19,10 +19,10 @@ export default function Hero() {
   });
 
   return (
-    <Flex w="100%" my="6" maxWidth={1440} mx="auto" px="6">
+    <Flex w="100%" my="6" maxWidth={1200} mx="auto" px="6">
       <Box flex="1" borderRadius={8} overflow="auto">
         <Grid
-          templateColumns="repeat(4, 218px)"
+          templateColumns={"repeat(auto-fill, minmax(218px, 1fr))"}
           gap={6}
           mx="auto"
           justifyContent="center"
@@ -63,14 +63,18 @@ export default function Hero() {
                     width="100%"
                     gap="4"
                   >
-                    <Flex align="center" justify="space-between" width="100%">
+                    <Flex
+                      align="center"
+                      justify="space-between"
+                      width="100%"
+                      gap={2}
+                    >
                       <Text
                         fontSize="16px"
                         mt="1"
                         fontWeight="600"
                         lineHeight="19px"
                         color="#2C2C2C"
-                        maxW="13ch"
                       >
                         {product.name}
                       </Text>
