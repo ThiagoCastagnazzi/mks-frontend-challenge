@@ -67,6 +67,15 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
     }
   };
 
+  const handleFinishCart = () => {
+    if (cart.length > 0) {
+      dispatch(clearCart());
+      toast.success("Compra finalizada");
+    } else {
+      toast.error("Carrinho vazio");
+    }
+  };
+
   return (
     <>
       <Drawer
@@ -134,6 +143,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                 bg: "gray.300",
                 color: "black",
               }}
+              onClick={handleFinishCart}
             >
               Finalizar Compra
             </Button>
