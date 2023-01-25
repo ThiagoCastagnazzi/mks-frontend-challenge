@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-export function Logo() {
+export default function Logo() {
   return (
     <Link href="/" legacyBehavior>
       <a>

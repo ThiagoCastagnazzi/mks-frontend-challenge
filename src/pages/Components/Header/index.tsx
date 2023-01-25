@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import { Logo } from "./Logo";
+import Logo from "./Logo";
 
 const Cart = dynamic(() => import("../Cart"), { ssr: false });
 
