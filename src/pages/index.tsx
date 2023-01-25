@@ -2,7 +2,6 @@ import Head from "next/head";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Footer from "./Components/Footer";
-import { Box } from "@chakra-ui/react";
 
 export default function Home() {
   return (
