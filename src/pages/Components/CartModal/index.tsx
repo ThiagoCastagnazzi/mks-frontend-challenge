@@ -109,29 +109,46 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                 gap={6}
                 mt={4}
                 position="relative"
+                direction={["column", "column", "row"]}
               >
-                <Image src={product.photo} w="46px" alt={product.name} />
+                <Icon
+                  as={AiOutlineClose}
+                  w={6}
+                  h={6}
+                  p={1}
+                  position="absolute"
+                  right="-5px"
+                  top="-5px"
+                  cursor="pointer"
+                  onClick={() => handleDeleProduct(product)}
+                  borderRadius="50%"
+                  bg="black"
+                  color="#fff"
+                >
+                  X
+                </Icon>
 
-                <Flex align="center" justify="space-evenly" gap={4}>
-                  <Icon
-                    as={AiOutlineClose}
-                    w={6}
-                    h={6}
-                    p={1}
-                    position="absolute"
-                    right="-5px"
-                    top="-5px"
-                    cursor="pointer"
-                    onClick={() => handleDeleProduct(product)}
-                    borderRadius="50%"
-                    bg="black"
-                    color="#fff"
+                <Flex
+                  align="center"
+                  gap={2}
+                  direction={["column", "row", "row"]}
+                >
+                  <Image
+                    src={product.photo}
+                    w={["80px", "100px"]}
+                    alt={product.name}
+                  />
+                  <Text
+                    fontSize={["16px", "13px"]}
+                    fontWeight="400"
+                    w={["100%", "100px"]}
+                    textAlign={["center", "left"]}
                   >
-                    X
-                  </Icon>
-                  <Text fontSize="13px" fontWeight="400" w="100px">
                     {product.name}
                   </Text>
+                </Flex>
+
+                <Flex align="center" justify="space-evenly" gap={4}>
                   <Flex
                     direction="column"
                     align="center"
@@ -172,12 +189,14 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                       </Button>
                     </Flex>
                   </Flex>
-                  <Text fontWeight="bold">
-                    {new Intl.NumberFormat("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(product.price * product.quantity)}
-                  </Text>
+                  <Flex>
+                    <Text fontWeight="bold">
+                      {new Intl.NumberFormat("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      }).format(product.price * product.quantity)}
+                    </Text>
+                  </Flex>
                 </Flex>
               </Flex>
             ))}
@@ -188,10 +207,10 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
               Limpar Carrinho
             </Button>
             <Flex align="center" justify="space-between" w="100%" p={4}>
-              <Text fontWeight="bold" color="#fff" fontSize="28px">
+              <Text fontWeight="bold" color="#fff" fontSize={["20px", "28px"]}>
                 Total:
               </Text>
-              <Text fontWeight="bold" color="#fff" fontSize="28px">
+              <Text fontWeight="bold" color="#fff" fontSize={["20px", "28px"]}>
                 {new Intl.NumberFormat("pt-BR", {
                   style: "currency",
                   currency: "BRL",

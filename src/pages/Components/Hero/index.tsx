@@ -9,6 +9,7 @@ import {
   Img,
   Spinner,
   Text,
+  Image,
 } from "@chakra-ui/react";
 
 import { useAppDispatch } from "@/pages/store/hooks";
@@ -153,8 +154,16 @@ export default function Hero() {
                   mt="auto"
                   width="100%"
                   onClick={() => handleAddToCart(product)}
+                  display="flex"
+                  alignItems="center"
                 >
-                  COMPRAR
+                  <Image
+                    src="shopping-bag.svg"
+                    alt="Carrinho"
+                    width="15px"
+                    mr="14px"
+                  />
+                  <Text>COMPRAR</Text>
                 </Button>
               </Card>
             ))
