@@ -16,7 +16,7 @@ export function Logo() {
             color="#fff"
           >
             MKS
-            <Text as="span" ml="1" color="gray.400">
+            <Text as="span" ml="1" color="gray.300">
               Sistemas
             </Text>
           </Text>

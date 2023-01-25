@@ -1,8 +1,11 @@
 import { Flex, Text, Image, useDisclosure } from "@chakra-ui/react";
+import { useAppSelector } from "@/pages/store/hooks";
 import CartModal from "../CartModal";
 
 export default function Cart() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const { itemsQuantity } = useAppSelector((state) => state.cart);
 
   return (
     <Flex
@@ -18,7 +21,7 @@ export default function Cart() {
       onClick={onOpen}
     >
       <Image src="Cart-Icon.svg" alt="cart" />
-      <Text fontSize="16px">0</Text>
+      <Text fontSize="16px">{itemsQuantity}</Text>
 
       <CartModal isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
     </Flex>

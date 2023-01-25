@@ -1,4 +1,5 @@
 import { useProducts } from "@/pages/hooks/useProducts";
+
 import {
   Box,
   Button,
@@ -10,6 +11,22 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { useAppDispatch } from "@/pages/store/hooks";
+import { addProductCart } from "@/pages/store/cartSlice";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+interface ProductProps {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: number;
+  updatedAt: string;
+}
+
 export default function Hero() {
   const { data, isFetching, error } = useProducts({
     pageNumber: 1,
@@ -18,9 +35,32 @@ export default function Hero() {
     pageOrderBy: "ASC",
   });
 
+  const dispatch = useAppDispatch();
+
+  const handleAddToCart = (product: ProductProps) => {
+    try {
+      dispatch(addProductCart(product));
+
+      if (toast.isActive("productAdded")) {
+        toast.update("productAdded", {
+          render: `Produto adicionado ao carrinho`,
+          type: toast.TYPE.SUCCESS,
+          autoClose: 3000,
+        });
+      } else {
+        toast.success(`Produto adicionado ao carrinho`, {
+          toastId: "productAdded",
+        });
+      }
+    } catch (error) {
+      toast.error("Erro ao adicionar produto ao carrinho");
+    }
+  };
+
   return (
     <Flex w="100%" my="6" maxWidth={1200} mx="auto" px="6">
       <Box flex="1" borderRadius={8} overflow="auto">
+        <ToastContainer position="bottom-center" />
         <Grid
           templateColumns={"repeat(auto-fill, minmax(218px, 1fr))"}
           gap={6}
@@ -31,7 +71,7 @@ export default function Hero() {
             <Spinner
               thickness="4px"
               speed="0.65s"
-              emptyColor="gray.200"
+              emptyColor="#fff"
               color="blue.500"
             />
           ) : error ? (
@@ -107,7 +147,13 @@ export default function Hero() {
                   </Flex>
                 </Flex>
 
-                <Button colorScheme="blue" size="sm" mt="auto" width="100%">
+                <Button
+                  colorScheme="blue"
+                  size="sm"
+                  mt="auto"
+                  width="100%"
+                  onClick={() => handleAddToCart(product)}
+                >
                   COMPRAR
                 </Button>
               </Card>
