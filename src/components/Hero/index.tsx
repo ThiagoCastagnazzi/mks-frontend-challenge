@@ -68,6 +68,7 @@ export default function Hero() {
           gap={6}
           mx="auto"
           justifyContent="center"
+          mb={7}
         >
           {isFetching ? (
             <Spinner
