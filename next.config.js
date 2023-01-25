@@ -1,9 +1,15 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
+
+/**
+ * @type {import('next').NextConfig}
+ **/
 const nextConfig = {
-  reactStrictMode: true,
+  /* config options here */
+  reactStrictMode: false,
+  optimizeFonts: true,
+  compiler: {
+    styledComponents: true,
+  },
 };
 
-module.exports = {
-  ...nextConfig,
-  pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
-};
+module.exports = nextConfig;
