@@ -12,13 +12,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { useAppDispatch, useAppSelector } from "@/pages/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   clearCart,
   decrementProductCart,
   deleteProductCart,
   incrementProductCart,
-} from "@/pages/store/cartSlice";
+} from "@/store/cartSlice";
 
 import { toast } from "react-toastify";
 

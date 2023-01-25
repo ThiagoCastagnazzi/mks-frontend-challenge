@@ -1,5 +1,5 @@
 import { Flex, Text, Image, useDisclosure } from "@chakra-ui/react";
-import { useAppSelector } from "@/pages/store/hooks";
+import { useAppSelector } from "@/store/hooks";
 import CartModal from "../CartModal";
 
 export default function Cart() {

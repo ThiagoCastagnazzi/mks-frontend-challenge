@@ -1,4 +1,4 @@
-import { useProducts } from "@/pages/hooks/useProducts";
+import { useProducts } from "@/hooks/useProducts";
 
 import {
   Box,
@@ -12,8 +12,8 @@ import {
   Image,
 } from "@chakra-ui/react";
 
-import { useAppDispatch } from "@/pages/store/hooks";
-import { addProductCart } from "@/pages/store/cartSlice";
+import { useAppDispatch } from "@/store/hooks";
+import { addProductCart } from "@/store/cartSlice";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

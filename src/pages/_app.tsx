@@ -3,7 +3,7 @@ import GlobalStyle from "@/styles/resets/createGlobalStyles";
 import type { AppProps } from "next/app";
 
 import { Provider } from "react-redux";
-import { store } from "../pages/store/store";
+import { store } from "../store/store";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChakraProvider } from "@chakra-ui/react";
