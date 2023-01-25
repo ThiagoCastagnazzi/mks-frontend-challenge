@@ -3,9 +3,4 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = {
-  ...nextConfig,
-  experimental: {
-    forceSwcTransforms: true,
-  },
-};
+module.exports = nextConfig;
