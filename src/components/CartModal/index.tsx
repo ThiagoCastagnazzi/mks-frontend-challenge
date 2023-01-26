@@ -12,17 +12,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   clearCart,
   decrementProductCart,
   deleteProductCart,
   incrementProductCart,
-} from "@/store/cartSlice";
+} from "../../store/cartSlice";
 
 import { toast } from "react-toastify";
 
-import "react-toastify/dist/ReactToastify.css";
 import CartProduct from "../CartProduct";
 
 interface CartModalProps {

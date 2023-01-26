@@ -1,22 +1,11 @@
-import { useProducts } from "@/hooks/useProducts";
+import { useProducts } from "../../hooks/useProducts";
 
-import {
-  Box,
-  Button,
-  Card,
-  Flex,
-  Grid,
-  Img,
-  Spinner,
-  Text,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Flex, Grid, Spinner, Text } from "@chakra-ui/react";
 
-import { useAppDispatch } from "@/store/hooks";
-import { addProductCart } from "@/store/cartSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { addProductCart } from "../../store/cartSlice";
 
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import ProductCard from "../ProductCard";
 
 interface ProductProps {

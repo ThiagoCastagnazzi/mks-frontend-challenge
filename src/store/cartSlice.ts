@@ -71,7 +71,9 @@ export const cartSlice = createSlice({
 
         localStorage.setItem("@MKS:cart", JSON.stringify(state.cart));
       } catch (error) {
-        console.log(error);
+        throw new Error(
+          "Não foi possível adicionar o produto ao carrinho. Tente novamente."
+        );
       }
     },
     incrementProductCart: (state, action) => {
@@ -99,7 +101,9 @@ export const cartSlice = createSlice({
 
         localStorage.setItem("@MKS:cart", JSON.stringify(state.cart));
       } catch (error) {
-        console.log(error);
+        throw new Error(
+          "Não foi possível adicionar um produto ao carrinho. Tente novamente."
+        );
       }
     },
     decrementProductCart: (state, action) => {
@@ -131,7 +135,9 @@ export const cartSlice = createSlice({
 
         localStorage.setItem("@MKS:cart", JSON.stringify(state.cart));
       } catch (error) {
-        console.log(error);
+        throw new Error(
+          "Não foi possível remover um produto ao carrinho. Tente novamente."
+        );
       }
     },
     clearCart: (state) => {
@@ -142,7 +148,7 @@ export const cartSlice = createSlice({
 
         localStorage.setItem("@MKS:cart", JSON.stringify(state.cart));
       } catch (error) {
-        console.log(error);
+        throw new Error("Não foi possível limpar o carrinho. Tente novamente.");
       }
     },
     deleteProductCart: (state, action) => {
@@ -170,7 +176,9 @@ export const cartSlice = createSlice({
 
         localStorage.setItem("@MKS:cart", JSON.stringify(state.cart));
       } catch (error) {
-        console.log(error);
+        throw new Error(
+          "Não foi possível deletar o produto do carrinho. Tente novamente."
+        );
       }
     },
   },
